@@ -18,14 +18,11 @@ int main(int argc, char *argv[]) {
 
   writeChunk(&chunk, OP_ADD, 5);
 
-  int constant2= addConstant(&chunk, 1.2);
-  writeChunk(&chunk, OP_CONSTANT, 1);
-  writeChunk(&chunk, constant2, 2);
+  constant = addConstant(&chunk, 5.6);
+  writeChunk(&chunk, OP_CONSTANT, 6);
+  writeChunk(&chunk, constant, 7);
 
-  constant2 = addConstant(&chunk, 3.4);
-  writeChunk(&chunk, OP_CONSTANT, 3);
-  writeChunk(&chunk, constant2, 4);
-
+  writeChunk(&chunk, OP_SUBTRACT, 1);
 
   writeChunk(&chunk, OP_RETURN, 123);
 
